@@ -1,0 +1,3 @@
+﻿  DynamicVector.cpp
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab5\lab5\DynamicVector.cpp(66,21): warning C4244: '*=': conversion from 'double' to 'int', possible loss of data
+  lab5.vcxproj -> C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab5\Debug\lab5.exe
