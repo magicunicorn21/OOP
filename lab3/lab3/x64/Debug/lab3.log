@@ -1,0 +1,34 @@
+﻿  UI.c
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(34,7): warning C4013: 'gets' undefined; assuming extern returning int
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(47,20): warning C4013: 'isdigit' undefined; assuming extern returning int
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(35,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(42,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(62,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(64,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(65,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(66,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(67,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(68,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(77,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(79,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(80,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(81,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(82,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(83,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\lab3\UI.c(91,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+  lab3.vcxproj -> C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab3\x64\Debug\lab3.exe
