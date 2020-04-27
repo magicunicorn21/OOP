@@ -1,0 +1,21 @@
+[2020-04-26 16:33:56] [info] Start Program:
+Path:"C:\\Users\\mara.dobse\\Desktop\\Mara\\Faculta\\an II\\Semester II\\OOP\\lab\\lab5-7\\x64\\Debug\\lab5.exe"
+Arguments:
+Working directory: "C:\\Users\\mara.dobse\\Desktop\\Mara\\Faculta\\an II\\Semester II\\OOP\\lab\\lab5-7\\lab5\\"
+Modules: Selected: C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab5-7\x64\Debug\lab5.exe Excluded: 
+Sources: Selected: C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab5-7\lab5 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\mara.dobse\AppData\Local\Temp\viylo1sg.5ck 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2020-04-26 16:33:56] [info] Module: C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab5-7\x64\Debug\lab5.exe is selected because it matches selected pattern: C:\Users\mara.dobse\Desktop\Mara\Faculta\an II\Semester II\OOP\lab\lab5-7\x64\Debug\lab5.exe
+[2020-04-26 16:33:56] [info] ----------------------------------------------------
+[2020-04-26 16:33:56] [info] Coverage binary generated in file: C:\Users\mara.dobse\AppData\Local\Temp\viylo1sg.5ck
+[2020-04-26 16:33:56] [info] ----------------------------------------------------

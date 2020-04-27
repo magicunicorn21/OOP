@@ -29,26 +29,6 @@ bool Enchantment::updateStatueEnchantment(std::string powerWordName, std::string
     return true;
 }
 
-Encyclopedia* Enchantment::getEncyclopedia()
-{
-    return encyclopedia_;
-}
-
-Encyclopedia* Enchantment::getActiveStatues()
-{
-    return activeStatues_;
-}
-
-DynamicVector<GuardianStatue> Enchantment::getAllStatues()
-{
-    return encyclopedia_->getAllStatues();
-}
-
-DynamicVector<GuardianStatue> Enchantment::getAllActiveStatues()
-{
-    return activeStatues_->getAllStatues();
-}
-
 GuardianStatue Enchantment::next()
 {
     currentStatuesPosition_++;
@@ -65,16 +45,22 @@ void Enchantment::addActiveStatue(std::string powerWordName)
     activeStatues_->addStatue(statueToSave);
 }
 
-DynamicVector<GuardianStatue> Enchantment::filterStatues(std::string powerWordName, int age)
+std::vector<GuardianStatue> Enchantment::filterStatues(std::string material, int age)
 {
-    DynamicVector<GuardianStatue> allStatues = encyclopedia_->getAllStatues();
-    DynamicVector<GuardianStatue> filteredStatues;// = new DynamicVector<GuardianStatue>(encyclopedia_->getSize());
-    for (int index = 0; index < allStatues.getSize(); index++)
-        if (allStatues[index].getAge() < age && allStatues[index].getPowerWordName() == powerWordName)
-            filteredStatues.add(allStatues[index]);
-    if (filteredStatues.getSize() == 0)
-        for (int index = 0; index < allStatues.getSize(); index++)
-            if (allStatues[index].getAge() < age)
-                filteredStatues.add(allStatues[index]);
+    std::vector<GuardianStatue> allStatues = encyclopedia_->getAllStatues();
+    std::vector<GuardianStatue> filteredStatues;
+    for (GuardianStatue& statue : allStatues)
+        if (statue.getAge() < age && statue.getMaterial() == material)
+            filteredStatues.push_back(statue);
+    if (filteredStatues.size() == 0)
+        for (GuardianStatue& statue : allStatues)
+            if (statue.getAge() < age)
+                filteredStatues.push_back(statue);
     return filteredStatues;
+}
+
+void Enchantment::setPath(std::string path)
+{
+    path_ = path;
+    encyclopedia_->setPath(path);
 }

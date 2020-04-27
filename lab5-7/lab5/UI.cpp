@@ -2,6 +2,9 @@
 #include <sstream>
 #include <vector>
 
+#define commandParameter 0
+#define pathParameter 1
+
 using namespace std;
 
 void RunicAltar::printMenuA()
@@ -40,32 +43,23 @@ std::vector<std::string> splitCommand(std::string command)
 
 void RunicAltar::printAllStatues()
 {
-    DynamicVector<GuardianStatue> statues = enchantment_.getAllStatues();
-    for (int index = 0; index < statues.getSize(); index++)
-    {
-        GuardianStatue statue = statues[index];
+    std::vector<GuardianStatue> statues = enchantment_.getAllStatues();
+    for (GuardianStatue& statue : statues)
         std::cout << statue.toString() << std::endl;
-    }
 }
 
 void RunicAltar::printActiveStatues()
 {
-    DynamicVector<GuardianStatue> statues = enchantment_.getAllActiveStatues();
-    for (int index = 0; index < statues.getSize(); index++)
-    {
-        GuardianStatue statue = statues[index];
+    std::vector<GuardianStatue> statues = enchantment_.getAllActiveStatues();
+    for (GuardianStatue& statue : statues)
         std::cout << statue.toString() << std::endl;
-    }
 }
 
 void RunicAltar::printFilteredStatues(std::string material, int age)
 {
-    DynamicVector<GuardianStatue> statues = enchantment_.filterStatues(material, age);
-    for (int index = 0; index < statues.getSize(); index++)
-    {
-        GuardianStatue statue = statues[index];
+    std::vector<GuardianStatue> statues = enchantment_.filterStatues(material, age);
+    for (GuardianStatue& statue : statues)
         std::cout << statue.toString() << std::endl;
-    }
 }
 
 void RunicAltar::runAMode()
@@ -131,8 +125,30 @@ void RunicAltar::runBMode()
 
 void RunicAltar::run()
 {
-    std::string mode;
+    std::string mode, path;
     bool modeChosen = false;
+    bool pathChosen = false;
+    while (!pathChosen)
+    {
+        std::cout << "Choose path: " << endl;
+        std::getline(std::cin, path);
+        vector<string> splittedCommand = splitCommand(path);
+        if (path == "exit")
+        {
+            pathChosen = true;
+            modeChosen = true;
+        }
+        else if (splittedCommand[commandParameter] == "fileLocation")
+        {
+            if (splittedCommand.size() > 1)
+            {
+                pathChosen = true;
+                enchantment_.setPath(splittedCommand[pathParameter]);
+            }
+        }
+        else
+            cout << "Invalid command!" << endl;
+    }
     while (!modeChosen)
     {
         std::cout << "Choose mode (A - full fledged mages / B - apprentices): " << endl;

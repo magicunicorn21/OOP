@@ -1,6 +1,7 @@
 #include "Tests.h"
 #include "UI.h"
 #include <iostream>
+#include <fstream>
 #include <assert.h>
 
 void getPowerWordName_vaidInput_assertTrue(GuardianStatue testStatue)
@@ -43,6 +44,23 @@ void getCorporealForm_invaidInput_assertFalse(GuardianStatue testStatue)
 	assert(!(testStatue.getCorporealForm() == "knight"));
 }
 
+void toString_GuardianStatue_GuardianStatueIntoString(GuardianStatue testStatue)
+{
+	assert(testStatue.toString() == "cool statue, marble, 237, mage");
+}
+
+void equalOperator_equalStatue_true(GuardianStatue testStatue)
+{
+	GuardianStatue statueToCompare("cool statue", "marble", 237, "mage");
+	assert(testStatue == statueToCompare);
+}
+
+void notEqualOperator_equalStatue_true(GuardianStatue testStatue)
+{
+	GuardianStatue statueToCompare("not cool statue", "something", 2647, "another");
+	assert(testStatue != statueToCompare);
+}
+
 void testGuardianStatue()
 {
 	GuardianStatue testStatue("cool statue", "marble", 237, "mage");
@@ -54,6 +72,9 @@ void testGuardianStatue()
 	getMaterial_invaidInput_assertFalse(testStatue);
 	getAge_invaidInput_assertFalse(testStatue);
 	getCorporealForm_invaidInput_assertFalse(testStatue);
+	toString_GuardianStatue_GuardianStatueIntoString(testStatue);
+	equalOperator_equalStatue_true(testStatue);
+	notEqualOperator_equalStatue_true(testStatue);
 }
 
 void addStatue_validInput_added(Encyclopedia* testEncyclopedia)
@@ -112,14 +133,30 @@ void updateStatue_nonexistingStatue_notUpdated(Encyclopedia* testEncyclopedia)
 	//assert(!(testEncyclopedia->getAllStatues()[testEncyclopedia->findStatuePositionByPoweName("cool statue")].getCorporealForm() == "king"));
 }
 
+void writeToFile_multipleWrites_written(Encyclopedia* testEncyclopedia)
+{
+	GuardianStatue statue1("a", "skcbhf", 123, "kaudhse");
+	GuardianStatue statue2("b", "sgfv", 234, "sejfg");
+	GuardianStatue statue3("c", "kadhw", 743, "jefb");
+	std::vector< GuardianStatue> statues;
+	statues.push_back(statue1);
+	statues.push_back(statue2);
+	statues.push_back(statue3);
+	testEncyclopedia->writeToFile("ok", statues);
+	assert(testEncyclopedia->getSize() == 3);
+}
+
 void testRepository()
 {
-	Encyclopedia* testEncyclopedia = new Encyclopedia;
+	Encyclopedia* testEncyclopedia = new Encyclopedia();
+	testEncyclopedia->setPath("ok");
 	addStatue_validInput_added(testEncyclopedia);
 	addStatue_duplicate_notAdded(testEncyclopedia);
 	removeStatue_existingStatue_removed(testEncyclopedia);
+	removeStatue_nonexistingStatue_notRemoved(testEncyclopedia);
 	updateStatue_existingStatue_updated(testEncyclopedia);
 	updateStatue_nonexistingStatue_notUpdated(testEncyclopedia);
+	writeToFile_multipleWrites_written(testEncyclopedia);
 }
 
 void addStatueEnchantment_validInput_assertTrue(Enchantment testEnchantment)
@@ -153,17 +190,46 @@ void updateStatueEnchantment_nonexistingStatue_notUpdated(Enchantment testEnchan
 	assert(!(testEnchantment.updateStatueEnchantment("not there statue", "stone", 23, "interesting")));
 }
 
+void next_nextObject_iterated(Enchantment testEnchantment)
+{
+	assert(testEnchantment.next() == testEnchantment.getAllStatues()[0]);
+}
+
+void addActiveStatue_existingStatue_added(Enchantment testEnchantment)
+{
+	testEnchantment.addActiveStatue("cool statue");
+	assert(testEnchantment.getAllActiveStatues()[0].getPowerWordName() == "cool statue");
+}
+
+void filterStatues_existingStatueMaterialAge_found(Enchantment testEnchantment)
+{
+	std::vector<GuardianStatue> statues = testEnchantment.filterStatues("stone", 25);
+	assert(statues.size() == 1);
+}
+
+void filterStatues_existingStatueBadMaterialGoodAge_found(Enchantment testEnchantment)
+{
+	std::vector<GuardianStatue> statues = testEnchantment.filterStatues("marble", 25);
+	assert(statues.size() == 1);
+}
+
 void testController()
 {
 	Encyclopedia* testEncyclopedia = new Encyclopedia();
 	Encyclopedia* testActiveStatues = new Encyclopedia();
 	Enchantment testEnchantment(testEncyclopedia, testActiveStatues);
+	testEnchantment.setPath("blabla");
+	testActiveStatues->setPath("newOne");
 	addStatueEnchantment_validInput_assertTrue(testEnchantment);
 	addStatueEnchantment_duplicate_assertFalse(testEnchantment);
 	remoneStatueEnchantment_existingStatue_removed(testEnchantment);
 	remoneStatueEnchantment_nonexistingStatue_notRemoved(testEnchantment);
 	updateStatueEnchantment_existingStatue_updated(testEnchantment);
 	updateStatueEnchantment_nonexistingStatue_notUpdated(testEnchantment);
+	next_nextObject_iterated(testEnchantment);
+	addActiveStatue_existingStatue_added(testEnchantment);
+	filterStatues_existingStatueMaterialAge_found(testEnchantment);
+	filterStatues_existingStatueBadMaterialGoodAge_found(testEnchantment);
 }
 
 void testAll()
